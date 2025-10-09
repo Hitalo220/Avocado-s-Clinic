@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Avocado´s Clinic</title>
+</head>
+
+<body>
+    <header class="header">
+        <img src="Imagens/Avocado_s_Clinic-removebg-preview.png" width="100px" height="100px" alt="Logo da clínica">
+        <h1 class="titulo"> Avocado's Clinic </h1>
+        <button class="btn-ajuda" id="botao">Ajuda</button>
+    </header>
+
+    <div class="container-01">
+        <h1 class="titulo"> Central de Agendamento</h1>
+    </div>
+
+    <div class="cards-container">
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/neurologia.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Neurologia', this)">Neurologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda" id="agendar">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/bocaodonto.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Odontologia', this)">Odontologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/gineeuro.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda"
+                onclick="mostrarDescricoes('Ginecologia/Urologia', this)">Ginecologia/Urologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/pediatria.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Pediatria', this)">Pediatria</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/cardiologia.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Cardiologia', this)">Cardiologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/olhoodonto.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Oftalmologia', this)">Oftalmologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="Imagens/dermatologia.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Dermatologia', this)">Dermatologia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/ortopedia.png" width="150px" height="100px" alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Ortopedia', this)">Ortopedia</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+        <div class="card">
+            <div class="image">
+                <img src="imagens/ChatGPT Image 4 de out. de 2025, 16_55_41.png" width="150px" height="100px"
+                    alt="Ícone de médico">
+            </div>
+            <button class="btn-ajuda" onclick="mostrarDescricoes('Exame Geral', this)">Exame Geral</button>
+            <div class="detalhes"></div>
+            <button class="btn-ajuda">Agendar</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Avocado´s Clinic | Todos os Direitos Reservados | made by: Thainá Cardoso & Hítalo Araújo</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com">Facebook</a> |
+            <a href="https://www.instagram.com">Instagram</a> |
+            <a href="https://www.twitter.com">Twitter </a> |
+            <a href="">Ajuda</a>
+        </div>
+    </footer>
+
+    <script>
+        async function mostrarDescricoes(area, btn) {
+            try {
+                // encontra o elemento .detalhes relativo ao card do botão
+                const card = btn.closest('.card');
+                const detalhes = card.querySelector('.detalhes');
+                detalhes.innerHTML = "Carregando...";
+
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                const mensagens = {
+                    "Exame Geral": "O curso de Exame Geral vai te preparar para realizar avaliações de saúde completas.",
+                    "Odontologia": "A odontologia é a área da saúde que cuida da prevenção, diagnóstico e tratamento de doenças que afetam dentes, gengivas e estruturas bucais, realizando procedimentos como limpezas, restaurações, extrações e tratamentos de canal.",
+                    "Neurologia": "A neurologia é a especialidade que cuida dos distúrbios do sistema nervoso, tratando doenças como epilepsia, Parkinson, esclerose múltipla e derrames, entre outras condições neurológicas.",
+                    "Ginecologia/Urologia": "A ginecologia é a especialidade médica que se concentra na saúde do sistema reprodutor feminino. A urologia trata do sistema urinário e reprodutor masculino.",
+                    "Pediatria": "A pediatria é a especialidade médica que se dedica ao cuidado da saúde de crianças e adolescentes, desde o nascimento até os 18 anos de idade.",
+                    "Cardiologia": "A cardiologia é a especialidade médica que se dedica ao estudo, diagnóstico e tratamento das doenças do coração e do sistema circulatório.",
+                    "Oftalmologia": "A oftalmologia é a especialidade médica que se dedica ao estudo, diagnóstico e tratamento das doenças e condições dos olhos e do sistema visual.",
+                    "Dermatologia": "A dermatologia é a especialidade médica que se dedica ao estudo, diagnóstico e tratamento das doenças e condições da pele, cabelo e unhas.",
+                    "Ortopedia": "A ortopedia é a especialidade médica que se dedica ao estudo, diagnóstico e tratamento das doenças e lesões do sistema musculoesquelético."
+                };
+
+                if (mensagens[area]) {
+                    detalhes.innerHTML = mensagens[area];
+                } else {
+                    detalhes.innerHTML = "Descrição não disponível para esta área.";
+                }
+
+            } catch (erro) {
+                // fallback genérico
+                const allDetalhes = document.querySelectorAll('.detalhes');
+                allDetalhes.forEach(d => { if (d.innerHTML === 'Carregando...') d.innerHTML = 'Erro: ' + erro.message });
+                console.error("Erro capturado: ", erro);
+            }
+        }
+
+        document.getElementById("botao").addEventListener("click", function () {
+            alert("Para agendar uma consulta, clique no botão 'Agendar' ao lado da especialidade desejada ou para saber mais clique no botão acima d 'Agendar'. Em caso de dúvidas, entre em contato conosco pelo telefone (XX) XXXX-XXXX ou pelo e-mail clinicavodados@gmail.com");
+        }, false);
+
+        document.getElementById("agendar").addEventListener("click", function () {
+            window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSemuAs-81gGHa5jpQH3UUoXHW7k35_DXvUFBx2yJQlQzQXhWQ/viewform?usp=sharing&ouid=103841706552724471228";
+        });
+
+    </script>
+</body>
+
+</html>
